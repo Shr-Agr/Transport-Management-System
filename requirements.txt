@@ -1,0 +1,10 @@
+flask
+flask-mysqldb
+prettytable
+mysql-connector-python
+sqlalchemy
+pymysql
+flask-mail
+authlib
+requests
+flask_limiter

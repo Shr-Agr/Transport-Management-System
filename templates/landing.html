@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Add custom styles -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("../static/images/map2.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 100px 100px 100px 100px rgba(0, 0, 0, 0.1);
+            border: 1px solid black;
+            margin-top: 100px;
+        }
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            /* padding: 20px; */
+            /* background-color: black;
+            color: yellowgreen; */
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 100px 100px 100px 100px rgba(0, 0, 0, 0.1);
+
+        }
+        /* #prof { */
+            /* background-color: black; */
+            /* padding: 10px; */
+        /* } */
+        .container text-center{
+            margin-top: 200px;
+            /* padding-top: 200px; */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <a onclick="location.href = 'userprofile'" id="prof">
+        <img src="../static/images/user_image.jpg" alt="user_img" class="logo" style="display: block;">
+    </a>
+    <div class="container text-center">
+        <h1 class="text-3xl font-bold mb-8">Welcome to Transport Management System</h1>
+        <ul class="text-lg">
+            <li class="mb-4"><a href="{{ url_for('booking2') }}" class="text-blue-500 hover:underline">Book a Bus</a></li>
+        </ul>
+    </div>
+    <img src="../static/images/logo.png" alt="Moon Macrosystems Logo" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 150px; height: auto;">
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login_styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("../static/images/b.jpg");
+            /* opacity: 2; */
+            background-attachment: fixed;
+  background-size: cover;
+  background-size: contain;
+
+        }
+        .container {
+            /* background-color: white; */
+            /* background-color: azure; */
+            /* background-color: ; */
+    box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.1);
+            /* border: 2px solid rgb(55, 55, 57) */
+        }
+        
+        .IITGNlogo {
+            height:200px;
+            /* justify-content: center; */
+            /* padding: auto; */
+            /* margin-left: 90px; */
+            /* margin-top: 10px; */
+            display: block;
+  margin-left: auto;
+  margin-right: auto;
+            /* margin-bottom: 10px; */
+            /* margin-right: 60px; */
+        }
+        .SignUpButton {
+            border-radius: 5px;
+            padding: 10px 20px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background-color 0.3s;
+            margin-left: 105px;
+            margin-bottom: 20px;
+        }
+        .SignUpButton:hover {
+            background-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/images/IITGNlogo.png" alt="Italian Trulli" class="IITGNlogo">
+
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if message == "Invalid email or password" %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/login">
+            <button type="button" class="SignUpButton" onclick="redirectToGoogle()">Login/Signup with Google</button>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <img src="../static/images/logo.png" alt="Moon Macrosystems Logo" style="position: relative; bottom: 20px; left: 50%; transform: translateX(-50%); width: 150px; height: auto;">
+
+</body>
+<script>
+    function redirectToGoogle() {
+        // Redirect the user to the Google authentication page
+        window.location.href = "/login/google";
+    }
+
+    setTimeout(function() {
+            var flashMessage = document.querySelector('.alert');
+            if (flashMessage) {
+                flashMessage.style.display = 'none';
+            }
+        }, 3000);
+</script>
+</html>

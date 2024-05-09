@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+        
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        
+        .heading {
+            text-align: center;
+            justify-content: center;
+            font-size: 30px;
+            /* margin-top: 40px; */
+            padding-top: 30px;
+            background-color: #385170;
+            height: 60px;
+            color: #fff;
+            /* border-radius: 10px; */
+            box-shadow: 200px 200px 200px 200px rgba(0, 204, 255, 0.1);
+        }
+
+        /* #footer { */
+            /* background-color: #385170; */
+            /* height: 170px; */
+            /* margin-top: 20px; */
+        /* } */
+    </style>
+</head>
+<body>
+    <h1 class="heading">Select a Table</h1>
+    <div class="container">
+        {% for table_name in table_names %}
+        <div class="card" onclick="handleCardClick('{{ table_name[0] }}')">
+            <h2>{{ table_name[0] }}</h2>
+            <!-- You can add more content here if needed -->
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id = "footer">
+        <!-- <h1>HIII</h1> -->
+        <img src="../static/images/logo.png" alt="Moon Macrosystems Logo" style="position: relative; left: 50%; transform: translateX(-50%); width: 170px; height: auto;">
+    </div>
+    
+    <script>
+        function handleCardClick(tableName) {
+            document.getElementById("selectedTable").value = tableName;
+            document.getElementById("selectTableForm").submit();
+        }
+    </script>
+    
+    <form id="selectTableForm" method="post" action="/view-tables">
+        <input type="hidden" name="tableName" id="selectedTable">
+    </form>
+</body>
+</html>
