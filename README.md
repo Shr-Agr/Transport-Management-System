@@ -13,7 +13,7 @@
 
 ## Setting up the Server
 
-First, change the working directory to `transport-management-system` after cloning this repository.  
+First, change the working directory to `Transport-Management-System` after cloning this repository.  
 ` git clone https://github.com/Shr-Agr/Transport-Management-System.git`
 
 ### Installing all the dependencies
