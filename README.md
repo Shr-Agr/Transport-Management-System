@@ -34,11 +34,4 @@ We can also create our own personal local network, and set up the server in one 
 ### Access the Webpage
 Access the website by typing `http://tms.iitgn.ac.in:6969/` on the browser.  
 ## For Non windows users
-Access the website by typing `http://127.0.0.1:6969/` on the browser.   
-
-## Contributors
-1) Mithil Pechimuthu
-2) Ayush Modi
-3) Shreesh Agarwal
-4) Anushk Bhana
-5) Vedant Kumbhar
+Access the website by typing `http://127.0.0.1:6969/` on the browser.
