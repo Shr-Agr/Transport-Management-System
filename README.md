@@ -6,7 +6,8 @@
 
 ## Design
 
-![updated_flowchart](https://github.com/ayushmodi12/transport-management-system/assets/113369113/eb11aa59-78fe-40c7-a429-9d7630195c47)
+![Flowchart_tms](https://github.com/Shr-Agr/Transport-Management-System/assets/138511229/38d57de6-7912-4378-a229-b4dad3b9e885)
+
 
 ## Running the project
 
